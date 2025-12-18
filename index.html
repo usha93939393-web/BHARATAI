@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bharat AI</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader-screen">
+    <div class="loader-logo">🇮🇳</div>
+    <div class="loader-text">Starting Bharat AI...</div>
+</div>
+
+<!-- AUTH SCREEN (LOGIN/REGISTER) -->
+<div id="authScreen" class="auth-screen hidden">
+    <div class="auth-box">
+        <h2 id="authTitle">Login to Bharat AI</h2>
+        <input id="authEmail" type="email" placeholder="Email" />
+        <input id="authPass" type="password" placeholder="Password" />
+        <button id="authBtn">Login</button>
+        <p id="toggleAuth">Create an account</p>
+    </div>
+</div>
+
+<!-- CHAT SCREEN -->
+<div id="chatScreen" class="chat-screen hidden">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar">
+        <h3 class="sidebar-title">Your Chats</h3>
+        <button id="newChatBtn" onclick="createNewChat()" class="new-chat-btn">➕ New Chat</button>
+        <div id="chatHistory"></div>
+    </div>
+
+    <div id="sidebarOverlay" class="sidebar-overlay hidden"></div>
+
+    <!-- MAIN CHAT AREA -->
+    <div class="chat-container">
+
+        <div class="chat-header">
+            <span id="menuBtn" class="menu-btn">☰</span>
+
+            <!--  UPDATED LOGO  -->
+            <span class="brand">
+                <img src="logo.png" alt="Bharat AI Logo" style="height:42px;margin-right:8px;vertical-align:middle;border-radius:50%;"> 
+                Bharat AI
+            </span>
+        </div>
+
+        <div id="chatBox" class="chat-box"></div>
+
+        <!-- Typing indicator -->
+        <div id="typingIndicator" class="typing hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <!-- INPUT -->
+        <div class="chat-input">
+            <input id="userInput" placeholder="Type your message..." />
+            <button id="voiceBtn" class="voice-btn">🎤</button>
+            <button id="sendBtn" onclick="sendMsg()" class="send-btn">Send</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
